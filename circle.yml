@@ -26,4 +26,7 @@ jobs:
       - run: git clone https://github.com/hexojs/hexo-theme-light.git themes/light
       - run: npm install hexo-cli
       - run: npm install hexo-deployer-git --save
-      - run: hexo deploy -g
+      - run: ./node_modules/.bin/hexo clean
+      - run: ./node_modules/.bin/hexo generate
+      - run: ./node_modules/.bin/hexo deploy
+      
