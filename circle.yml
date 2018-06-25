@@ -1,0 +1,29 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:8.11.3
+        environment:
+          TZ: /usr/share/zoneinfo/Asia/Tokyo
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/mongo:3.4.4
+
+    working_directory: ~/HomePage
+    branches:
+      only:
+        - master
+    steps:
+      - run: git config --global user.name "KoinoEngineering"
+      - run: git config --global user.email "email@koino.engineering"
+      - checkout
+      - run: git clone https://github.com/hexojs/hexo-theme-light.git themes/light
+      - run: npm install -g hexo-cli
+      - run: npm install hexo-deployer-git --save
+      - run: hexo deploy -g
