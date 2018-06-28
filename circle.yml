@@ -20,12 +20,23 @@ jobs:
       only:
         - master
     steps:
+      - run:
+          name: update-npm
+          command: 'sudo npm install -g npm@6'
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: install-npm
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
       - run: git config --global user.name "KoinoEngineering with CircleCI"
       - run: git config --global user.email "email@koino.engineering"
       - checkout
       - run: git submodule init
       - run: git submodule update
-      - run: npm install --local
       - run: ./node_modules/.bin/hexo clean
       - run: ./node_modules/.bin/hexo generate
       - run: ./node_modules/.bin/hexo deploy
