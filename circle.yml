@@ -23,6 +23,7 @@ jobs:
       - run:
           name: update-npm
           command: 'sudo npm install -g npm@6'
+      - checkout
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
@@ -34,7 +35,6 @@ jobs:
             - ./node_modules
       - run: git config --global user.name "KoinoEngineering with CircleCI"
       - run: git config --global user.email "email@koino.engineering"
-      - checkout
       - run: git submodule init
       - run: git submodule update
       - run: ./node_modules/.bin/hexo clean
