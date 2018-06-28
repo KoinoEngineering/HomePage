@@ -25,9 +25,7 @@ jobs:
       - checkout
       - run: git submodule init
       - run: git submodule update
-      - run: npm install hexo
-      - run: npm install hexo-cli
-      - run: npm install hexo-deployer-git --save
+      - run: npm install --local
       - run: ./node_modules/.bin/hexo clean
       - run: ./node_modules/.bin/hexo generate
       - run: ./node_modules/.bin/hexo deploy
