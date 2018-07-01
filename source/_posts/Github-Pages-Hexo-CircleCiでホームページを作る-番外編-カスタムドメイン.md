@@ -35,12 +35,31 @@ tags: blog
 この段階ではGithub側の設定ができていないので、Githubの404エラー画面が表示される<br>s  
 {% asset_img GithubNotFound.png %}
 
-## Githubの設定
-Githubの設定はSettingsの画面から簡単に行うことができるが、それだと直接リモートのmasterブランチを更新してしまうため、別の方法で実施することにする。
+## Githubの設定  
+- CircleCiとHexoの挙動の都合上以下の方法ではダメだった方法  
+    ~~Githubの設定はSettingsの画面から簡単に行うことができるが、それだと直接リモートのgh-pagesブランチを更新してしまうため、別の方法で実施することにする。~~  
+    - ~~CNAMEというファイルをリポジトリの直下に作成し、中に連携したいドメインをホスト込みで記載する~~  
+    ```
+    www.koino.engineering
+    ```
+    - ~~これをpushすれば設定完了~~  
 
-- CNAMEというファイルをリポジトリの直下に作成し、中に連携したいドメインをホスト込みで記載する
+
+- 正しい方法  
+`circle.yml`に以下の記載を追加する
+位置は`checkout`〜`hexo deploy`の間であれば問題ない
 ```
-www.koino.engineering
+ - run: echo "www.koino.engineering" > CNAME
 ```
 
-- これをpushすれば設定完了
+## `_config.yml`の設定
+
+カスタムドメインの設定をするとURLがサブフォルダで無くなるため、`_config.yml`の以下の設定を戻す  
+```
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: http://yoursite.com/
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+```
