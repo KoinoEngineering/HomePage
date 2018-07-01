@@ -1,6 +1,6 @@
 ---
-title: Github Pages+Hexo+CircleCiでホームページを作る_02_Hexoでホームページ編
-date: 2018-06-25 19:20:58
+title: Github-Pages-Hexo-CircleCiでホームページを作る_02_Hexo編
+date: 2018-06-29 00:40:53
 tags: blog
 ---
 
@@ -22,10 +22,10 @@ tags: blog
     $ cd HomePage
     $ Hexo server
 
--   ホームページのディレクトリでコマンド実行  
-    ![hexoStart](./img/hexoStart.PNG)  
--   URLにアクセス
-    ![HexoDefaultPage](./img/HexoDefaultPage.PNG)
+-   ホームページのディレクトリでコマンド実行<br>  
+{% asset_img hexoStart.PNG "hexoStart" %}
+-   URLにアクセス<br>  
+{% asset_img HexoDefaultPage.PNG  "HexoDefaultPage" %}
 
 ### テーマの設定
 
@@ -35,15 +35,15 @@ tags: blog
 使ってないlandscapeは消しちゃってもいいかもしれないけど、  
 デフォルトはなんかどこかから参照していることがあるので放置。_未調査_。
 
--   themesのディレクトリにClone  
+-   themesのディレクトリにClone<br>  
           git clone <https://github.com/hexojs/hexo-theme-light.git> themes/light
 -   `_config.yml`を修正  
           # Extensions
           ## Plugins: https://hexo.io/plugins/
           ## Themes: https://hexo.io/themes/
           theme: light
--   適用されていることを確認
-    ![ThemeChanged](./img/ThemeChanged.PNG)
+-   適用されていることを確認<br>
+{% asset_img ThemeChanged.PNG "ThemeChanged" %}
 
 ## masterブランチへコミット
 
@@ -55,7 +55,7 @@ tags: blog
     $ git remote add origin git@github.com:KoinoEngineering/HomePage.git
     $ git push -u origin master
 
-![makeMaster](./img/makeMaster.PNG)
+{% asset_img makeMaster.PNG "makeMaster" %}
 
 ## Github Pagesの設定(デプロイの準備)
 
@@ -71,16 +71,17 @@ Hexoのデプロイ先で、Github Pagesの本体となるgh-pagesブランチ�
     $ git push origin gh-pages  
     $ git checkout master  
 
-![makeGhPages](./img/makeGhPages.PNG)
+{% asset_img makeGhPages.PNG "makeGhPages" %}
 
 ### リポジトリの設定を変更する
 
 -   リポジトリのSettingsタブ＞GitHub Pagesにある、`Source`を`gh-pages`に変更して`save`を押す
--   `Enforce HTTPS`にチェックを入れる
-    ![GhPagesSettings](./img/GhPagesSettings.PNG)
+-   `Enforce HTTPS`にチェックを入れる  
+
+    {% asset_img GhPagesSettings.PNG "GhPagesSettings" %}
 
 この段階で表示されているURLに接続して、以下のようなっていれば設定はOK
-![HelloWorld](./img/HelloWorld.PNG)
+{% asset_img HelloWorld.PNG "HelloWorld" %}
 
 ## デプロイ
 
@@ -124,7 +125,7 @@ Hexoのデプロイ先で、Github Pagesの本体となるgh-pagesブランチ�
 
 設定が正しく反映されているかを、もう一度画面を起動しなおして確認  
 
-![AfterConfigEditPage](./img/AfterConfigEditPage.PNG)
+{% asset_img AfterConfigEditPage.PNG "AfterConfigEditPage" %}
 
 ### デプロイの実施
 
@@ -151,6 +152,6 @@ Hexoのデプロイ先で、Github Pagesの本体となるgh-pagesブランチ�
 
 デプロイに成功したらGithub Pagesの設定に表示されているURLにアクセスして確認する
 作成したホームページがきれいに表示できていれば成功
-![DisplayOnWeb](./img/DisplayOnWeb.PNG)
+{% asset_img DisplayOnWeb.PNG "DisplayOnWeb" %}
 
 これで、Hexoを用いてホームページを作成するところまでが完了した

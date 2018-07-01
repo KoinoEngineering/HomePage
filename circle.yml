@@ -24,15 +24,9 @@ jobs:
           name: update-npm
           command: 'sudo npm install -g npm@6'
       - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: install-npm
           command: npm install
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - ./node_modules
       - run: git config --global user.name "KoinoEngineering with CircleCI"
       - run: git config --global user.email "email@koino.engineering"
       - run: git submodule init
