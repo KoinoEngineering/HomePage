@@ -1,6 +1,6 @@
 ---
-title: Github-Pages-Hexo-CircleCiでホームページを作る_準備編
-date: 2018-06-25 19:10:05
+title: Github-Pages-Hexo-CircleCiでホームページを作る_01_準備編
+date: 2018-06-28 23:50:47
 tags: blog
 ---
 
@@ -33,11 +33,12 @@ Hexoを動作させるのにnode.jsが必要なためインストール
 ### Nodistのインストール
 
 AssetsのSetup-v0.8.8.exeをダウンロードして手順に従ってインストールする  
-![nodistダウンロード](./img/nodist.PNG)  
+
+{% asset_img nodist.PNG "nodistダウンロード" %}
 
 ### インストールの確認
 
-![インストールの確認](./img/nodist-v.PNG)  
+{% asset_img nodist-v.PNG "インストールの確認" %}
 
 ### nodeの安定板をインストール
 
@@ -49,10 +50,10 @@ nodistで
 とやってみたら<span style="color:red;">**エラーになった**</span>  
 Helpコマンド叩いてみてもlastestはいたが、stableキーワードはいなかった。<br>  
 よくよく調べてみると、  
-![stableHasBeenRemoved](./img/stableHasBeenRemoved.PNG)  
+{% asset_img stableHasBeenRemoved.PNG "stableHasBeenRemoved" %}
 nodistでは0.8.1でstableキーワードが**削除されていたようだ**。  
 node.jsのサイトを見ると**8.11.3**が**Recommended For Most Usersとなっていた**ため、これをインストールすることにした  
-![install8_11_3](./img/install8_11_3.PNG)
+{% asset_img install8_11_3.PNG "install8_11_3" %}
 
 ## 下準備２ Github
 
@@ -62,9 +63,9 @@ node.jsのサイトを見ると**8.11.3**が**Recommended For Most Usersとな�
 
 このホームページに使用する用のリポジトリを作成する。<br>
 今回はHomePageというリポジトリを作成した
-![HomePageRepository](./img/HomePageRepository.PNG)  
+{% asset_img HomePageRepository.PNG "HomePageRepository" %}
 ※_username.github.io_ というリポジトリを作れば細かい設定をしなくてもGithub Pagesが使用できるが、  
-**自動的にmasterブランチを使用する設定になってしまう** ため、今回は逆にやりづらいかもしれないと思いやめた  
+**自動的にmasterブランチを使用する設定になってしまう** 。今回は、gh-pagesブランチを使用した設定をしたかったため、今回は逆にやりづらいかもしれないと思いやめた  
 (設定の変更は可能なので、できないことはない)  
 
 ## 下準備３　Hexoのインストール
@@ -74,7 +75,9 @@ node.jsのサイトを見ると**8.11.3**が**Recommended For Most Usersとな�
     $ npm install -g hexo-cli
 
 -   インストールの確認  
-    ![HexoVersionCheck](./img/HexoVersionCheck.PNG)
+
+{% asset_img HexoVersionCheck.PNG "HexoVersionCheck" %}
+
 
 ## 下準備３ CircleCi
 
