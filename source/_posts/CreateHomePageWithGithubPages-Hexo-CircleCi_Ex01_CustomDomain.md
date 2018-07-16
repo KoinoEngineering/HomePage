@@ -36,7 +36,7 @@ tags: blog
 {% asset_img GithubNotFound.png %}
 
 ## Githubの設定  
-- CircleCiとHexoの挙動の都合上以下の方法ではダメだった方法  
+- <span style="color:red;font-weight: bold;">CircleCiとHexoの挙動の都合上以下の方法ではダメだった方法</span>  
     ~~Githubの設定はSettingsの画面から簡単に行うことができるが、それだと直接リモートのgh-pagesブランチを更新してしまうため、別の方法で実施することにする。~~  
     - ~~CNAMEというファイルをリポジトリの直下に作成し、中に連携したいドメインをホスト込みで記載する~~  
     ```
@@ -45,7 +45,7 @@ tags: blog
     - ~~これをpushすれば設定完了~~  
 
 
-- 正しい方法  
+- <span style="color:red;font-weight: bold;">正しい方法</span>  
 `circle.yml`の`hexo generate`の後に以下の記載を追加する
 ```
 　- run: echo "(ホスト名込みの自分のドメイン)" > public/CNAME
