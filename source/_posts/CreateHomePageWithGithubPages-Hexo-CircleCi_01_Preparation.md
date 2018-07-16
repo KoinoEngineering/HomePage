@@ -1,7 +1,10 @@
 ---
 title: Github-Pages-Hexo-CircleCiでホームページを作る_01_準備編
 date: 2018-06-28 23:50:47
-tags: blog
+tags:
+- blog
+- hexo
+- CircleCI
 ---
 
 タイトルの通り、ホームページを構築したので、最初の記事の練習と備忘録として記事を作成  
