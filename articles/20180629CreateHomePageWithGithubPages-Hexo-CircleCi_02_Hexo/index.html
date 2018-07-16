@@ -1,0 +1,257 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Github-Pages-Hexo-CircleCiでホームページを作る_02_Hexo編 | こいのエンジニアリング</title>
+  <meta name="author" content="濃野 剛">
+  
+  <meta name="description" content="こいのエンジニアリングのホームページ">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Github-Pages-Hexo-CircleCiでホームページを作る_02_Hexo編"/>
+  <meta property="og:site_name" content="こいのエンジニアリング"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="こいのエンジニアリング" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">こいのエンジニアリング</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-06-28T15:40:53.000Z"><a href="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_02_Hexo/">2018-06-29</a></time>
+      
+      
+  
+    <h1 class="title">Github-Pages-Hexo-CircleCiでホームページを作る_02_Hexo編</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>タイトルの通り、ホームページを構築したので、最初の記事の練習と備忘録として記事を作成  </p>
+<p>ここはHexoの設定からGithub Pagesの設定までを行う</p>
+<hr>
+<h2 id="Hexoの設定"><a href="#Hexoの設定" class="headerlink" title="Hexoの設定"></a>Hexoの設定</h2><h3 id="初期化"><a href="#初期化" class="headerlink" title="初期化"></a>初期化</h3><p>ここで使用するフォルダをそのままGitHubにpushする予定なので、<br><strong>gitのホームディレクトリ</strong> で <strong>GitHubに作成したリポジトリと同じ名前</strong> で初期化<br>そのままホームページのディレクトリに移動して画面を起動する</p>
+<pre><code>$ Hexo init HomePage
+$ cd HomePage
+$ Hexo server
+</code></pre><ul>
+<li>ホームページのディレクトリでコマンド実行<br>  <img src="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_02_Hexo/hexoStart.PNG" title="hexoStart"></li>
+<li>URLにアクセス<br>  <img src="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_02_Hexo/HexoDefaultPage.PNG" title="HexoDefaultPage">
+</li>
+</ul>
+<h3 id="テーマの設定"><a href="#テーマの設定" class="headerlink" title="テーマの設定"></a>テーマの設定</h3><p>テーマの変更をしたい場合はこちらを実施する。余談なので短く<br><a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexoのthemes</a>からテーマを選んで、そのテーマのリポジトリを見る<br>手順に従ってthemesのディレクトリにCloneして<code>_config.yml</code>を修正するだけ。<br>使ってないlandscapeは消しちゃってもいいかもしれないけど、<br>デフォルトはなんかどこかから参照していることがあるので放置。<em>未調査</em>。</p>
+<ul>
+<li>themesのディレクトリにClone<br>  <pre><code>git clone &lt;https://github.com/hexojs/hexo-theme-light.git&gt; themes/light
+</code></pre></li>
+<li><code>_config.yml</code>を修正  <pre><code># Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: light
+</code></pre></li>
+<li>適用されていることを確認<br><img src="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_02_Hexo/ThemeChanged.PNG" title="ThemeChanged">
+</li>
+</ul>
+<h2 id="masterブランチへコミット"><a href="#masterブランチへコミット" class="headerlink" title="masterブランチへコミット"></a>masterブランチへコミット</h2><p>ここまでで作成したものをオリジナルのHexoの設定やマークダウンを管理するためにmasterブランチへ追加する</p>
+<pre><code>$ git init
+$ git add .
+$ git commit -m &quot;first commit&quot;
+$ git remote add origin git@github.com:KoinoEngineering/HomePage.git
+$ git push -u origin master
+</code></pre><img src="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_02_Hexo/makeMaster.PNG" title="makeMaster">
+<h2 id="Github-Pagesの設定-デプロイの準備"><a href="#Github-Pagesの設定-デプロイの準備" class="headerlink" title="Github Pagesの設定(デプロイの準備)"></a>Github Pagesの設定(デプロイの準備)</h2><h3 id="gh-pagesブランチの作成"><a href="#gh-pagesブランチの作成" class="headerlink" title="gh-pagesブランチの作成"></a>gh-pagesブランチの作成</h3><p>Hexoのデプロイ先で、Github Pagesの本体となるgh-pagesブランチを作成する。<br>中身は何でもいいので今回は<code>HelloWorld</code>だけの<code>index.html</code>を作成した  </p>
+<pre><code>$ git checkout -b gh-pages  
+$ echo HelloWorld&gt;index.html  
+$ git add index.html  
+$ git commit -m &quot;make gh-pages branch&quot;  
+$ git push origin gh-pages  
+$ git checkout master  
+</code></pre><img src="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_02_Hexo/makeGhPages.PNG" title="makeGhPages">
+<h3 id="リポジトリの設定を変更する"><a href="#リポジトリの設定を変更する" class="headerlink" title="リポジトリの設定を変更する"></a>リポジトリの設定を変更する</h3><ul>
+<li>リポジトリのSettingsタブ＞GitHub Pagesにある、<code>Source</code>を<code>gh-pages</code>に変更して<code>save</code>を押す</li>
+<li><p><code>Enforce HTTPS</code>にチェックを入れる  </p>
+<img src="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_02_Hexo/GhPagesSettings.PNG" title="GhPagesSettings">
+</li>
+</ul>
+<p>この段階で表示されているURLに接続して、以下のようなっていれば設定はOK<br><img src="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_02_Hexo/HelloWorld.PNG" title="HelloWorld"></p>
+<h2 id="デプロイ"><a href="#デプロイ" class="headerlink" title="デプロイ"></a>デプロイ</h2><h3 id="config-ymlの設定"><a href="#config-ymlの設定" class="headerlink" title="_config.ymlの設定"></a>_config.ymlの設定</h3><p><code>_config.yml</code>に以下の設定をする  </p>
+<pre><code># Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: git@github.com:KoinoEngineering/HomePage.git
+  branch: gh-pages
+</code></pre><p>また、今回はリポジトリ名が<em>username.github.io</em>ではないため、Github Pagesを設定した場合の  URLが<br><a href="https://KoinoEngineering.github.io/HomePage" target="_blank" rel="noopener">https://KoinoEngineering.github.io/HomePage</a><br>のようにサブディレクトリとなる。<br>その設定がこちら</p>
+<pre><code># URL
+url: http://yoursite.com/HomePage
+root: /HomePage/
+</code></pre><p>ついでに<a href="https://hexo.io/docs/configuration.html" target="_blank" rel="noopener">ここ</a>を見ながらサイトの設定もした</p>
+<pre><code># Site
+title: &quot;こいのエンジニアリング&quot;
+subtitle:
+description: &quot;こいのエンジニアリングのホームページ&quot;
+keywords:
+author: &quot;濃野 剛&quot;
+language: ja
+timezone: Asia/Tokyo
+</code></pre><p><span style="color:red">注意点</span></p>
+<ul>
+<li><code>_config.yml</code>に日本語を入力した個所は<code>&quot;</code>で囲わないとHTML生成時にエラーになった。2バイト文字だから？</li>
+<li>ファイルがSJISだったためか文字化けした。UTF-8に変換して解消</li>
+</ul>
+<h3 id="設定内容の確認"><a href="#設定内容の確認" class="headerlink" title="設定内容の確認"></a>設定内容の確認</h3><p>設定が正しく反映されているかを、もう一度画面を起動しなおして確認  </p>
+<img src="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_02_Hexo/AfterConfigEditPage.PNG" title="AfterConfigEditPage">
+<h3 id="デプロイの実施"><a href="#デプロイの実施" class="headerlink" title="デプロイの実施"></a>デプロイの実施</h3><p>→ <a href="#デプロイが失敗する場合">デプロイが失敗する場合</a> はこちら</p>
+<p>以下のコマンドをホームページのディレクトリで実行する</p>
+<pre><code>$ hexo clean
+$ hexo generate
+$ hexo deploy
+
+または
+
+$ hexo deploy -g
+</code></pre><h4 id="デプロイが失敗する場合"><a href="#デプロイが失敗する場合" class="headerlink" title="デプロイが失敗する場合"></a><span style="color:red;">デプロイが失敗する場合</span></h4><p><code>type:git</code>で<code>delpyer not found</code>のエラーが発生する場合<br>プラグイン<code>hexo-deployer-git</code>が必要な模様</p>
+<pre><code>$ npm install hexo-deployer-git --save
+</code></pre><h4 id="デプロイの確認"><a href="#デプロイの確認" class="headerlink" title="デプロイの確認"></a>デプロイの確認</h4><p>デプロイに成功したらGithub Pagesの設定に表示されているURLにアクセスして確認する<br>作成したホームページがきれいに表示できていれば成功<br><img src="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_02_Hexo/DisplayOnWeb.PNG" title="DisplayOnWeb"></p>
+<p>これで、Hexoを用いてホームページを作成するところまでが完了した</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/blog/">blog</a>, <a href="/tags/hexo/">hexo</a>, <a href="/tags/CircleCI/">CircleCI</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Comments</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="http://yoursite.com/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_02_Hexo/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">Tags</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/CircleCI/">CircleCI</a><small>5</small></li>
+  
+    <li><a href="/tags/blog/">blog</a><small>5</small></li>
+  
+    <li><a href="/tags/hexo/">hexo</a><small>5</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2018 濃野 剛
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

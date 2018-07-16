@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Github-Pages-Hexo-CircleCiでホームページを作る_01_準備編 | こいのエンジニアリング</title>
+  <meta name="author" content="濃野 剛">
+  
+  <meta name="description" content="こいのエンジニアリングのホームページ">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Github-Pages-Hexo-CircleCiでホームページを作る_01_準備編"/>
+  <meta property="og:site_name" content="こいのエンジニアリング"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="こいのエンジニアリング" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">こいのエンジニアリング</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-06-28T14:50:47.000Z"><a href="/articles/20180628CreateHomePageWithGithubPages-Hexo-CircleCi_01_Preparation/">2018-06-28</a></time>
+      
+      
+  
+    <h1 class="title">Github-Pages-Hexo-CircleCiでホームページを作る_01_準備編</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>タイトルの通り、ホームページを構築したので、最初の記事の練習と備忘録として記事を作成  </p>
+<p>ここは準備編</p>
+<hr>
+<h2 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h2><ul>
+<li>OS：Windows10 Home</li>
+<li>Githubアカウントあり</li>
+<li>ssh設定済み</li>
+</ul>
+<p>その他の環境など</p>
+<ul>
+<li>エディタ：Atom</li>
+<li>Gitのホームディレクトリを変更している</li>
+<li>GitHubはssh設定済み</li>
+</ul>
+<hr>
+<h2 id="下準備１-node-js"><a href="#下準備１-node-js" class="headerlink" title="下準備１ node.js"></a>下準備１ node.js</h2><p>Hexoを動作させるのにnode.jsが必要なためインストール<br>今回はバージョン管理も必要かと思ったため<a href="https://github.com/marcelklehr/nodist/releases" target="_blank" rel="noopener">nodist</a>を使用することにした<br>ちなみにMacの場合には<a href="https://github.com/hokaccha/nodebrew" target="_blank" rel="noopener">nodebrew</a>というものがあるらしい  </p>
+<h3 id="Nodistのインストール"><a href="#Nodistのインストール" class="headerlink" title="Nodistのインストール"></a>Nodistのインストール</h3><p>AssetsのSetup-v0.8.8.exeをダウンロードして手順に従ってインストールする  </p>
+<img src="/articles/20180628CreateHomePageWithGithubPages-Hexo-CircleCi_01_Preparation/nodist.PNG" title="nodistダウンロード">
+<h3 id="インストールの確認"><a href="#インストールの確認" class="headerlink" title="インストールの確認"></a>インストールの確認</h3><img src="/articles/20180628CreateHomePageWithGithubPages-Hexo-CircleCi_01_Preparation/nodist-v.PNG" title="インストールの確認">
+<h3 id="nodeの安定板をインストール"><a href="#nodeの安定板をインストール" class="headerlink" title="nodeの安定板をインストール"></a>nodeの安定板をインストール</h3><p>Hexoのインストール手順を見たら<code>$ nvm install stable</code>となっていたため最新の安定板をインストールしようとしたが、<br>nodistで</p>
+<pre><code>nodist stable
+</code></pre><p>とやってみたら<span style="color:red;"><strong>エラーになった</strong></span><br>Helpコマンド叩いてみてもlastestはいたが、stableキーワードはいなかった。<br><br>よくよく調べてみると、<br><img src="/articles/20180628CreateHomePageWithGithubPages-Hexo-CircleCi_01_Preparation/stableHasBeenRemoved.PNG" title="stableHasBeenRemoved"><br>nodistでは0.8.1でstableキーワードが<strong>削除されていたようだ</strong>。<br>node.jsのサイトを見ると<strong>8.11.3</strong>が<strong>Recommended For Most Usersとなっていた</strong>ため、これをインストールすることにした<br><img src="/articles/20180628CreateHomePageWithGithubPages-Hexo-CircleCi_01_Preparation/install8_11_3.PNG" title="install8_11_3"></p>
+<h2 id="下準備２-Github"><a href="#下準備２-Github" class="headerlink" title="下準備２ Github"></a>下準備２ Github</h2><p>今回はGithubのGithub Pagesを使用してホームページを作成するため、Github Pages用の設定を行う。</p>
+<h3 id="任意のリポジトリを作成する"><a href="#任意のリポジトリを作成する" class="headerlink" title="任意のリポジトリを作成する"></a>任意のリポジトリを作成する</h3><p>このホームページに使用する用のリポジトリを作成する。<br><br>今回はHomePageというリポジトリを作成した<br><img src="/articles/20180628CreateHomePageWithGithubPages-Hexo-CircleCi_01_Preparation/HomePageRepository.PNG" title="HomePageRepository"><br>※<em>username.github.io</em> というリポジトリを作れば細かい設定をしなくてもGithub Pagesが使用できるが、<br><strong>自動的にmasterブランチを使用する設定になってしまう</strong> 。今回は、gh-pagesブランチを使用した設定をしたかったため、今回は逆にやりづらいかもしれないと思いやめた<br>(設定の変更は可能なので、できないことはない)  </p>
+<h2 id="下準備３-Hexoのインストール"><a href="#下準備３-Hexoのインストール" class="headerlink" title="下準備３　Hexoのインストール"></a>下準備３　Hexoのインストール</h2><p><a href="https://hexo.io/docs/" target="_blank" rel="noopener">Hexo</a>のインストール手順に従って、以下のコマンドを実行し、インストールする</p>
+<pre><code>$ npm install -g hexo-cli
+</code></pre><ul>
+<li>インストールの確認  </li>
+</ul>
+<img src="/articles/20180628CreateHomePageWithGithubPages-Hexo-CircleCi_01_Preparation/HexoVersionCheck.PNG" title="HexoVersionCheck">
+<h2 id="下準備３-CircleCi"><a href="#下準備３-CircleCi" class="headerlink" title="下準備３ CircleCi"></a>下準備３ CircleCi</h2><p><a href="https://circleci.com/signup/" target="_blank" rel="noopener">circleci</a>に接続して<strong>Sign Up with GitHub</strong>からCircleCiを連携する</p>
+<p>これで必要なものが全てそろった状態になった</p>
+<p>準備編はここまで</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/blog/">blog</a>, <a href="/tags/hexo/">hexo</a>, <a href="/tags/CircleCI/">CircleCI</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Comments</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="http://yoursite.com/articles/20180628CreateHomePageWithGithubPages-Hexo-CircleCi_01_Preparation/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">Tags</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/CircleCI/">CircleCI</a><small>5</small></li>
+  
+    <li><a href="/tags/blog/">blog</a><small>5</small></li>
+  
+    <li><a href="/tags/hexo/">hexo</a><small>5</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2018 濃野 剛
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

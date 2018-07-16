@@ -1,0 +1,570 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>こいのエンジニアリング</title>
+  <meta name="author" content="濃野 剛">
+  
+  <meta name="description" content="こいのエンジニアリングのホームページ">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="こいのエンジニアリング"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="こいのエンジニアリング" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">こいのエンジニアリング</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-07-16T13:42:22.232Z"><a href="/articles/20180716introduction/">2018-07-16</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/articles/20180716introduction/">イントロダクション</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <hr>
+<img src="/articles/20180716introduction/logo.PNG" title="KoinoEngineeringLogo">
+<h2 id="自己紹介"><a href="#自己紹介" class="headerlink" title="自己紹介"></a>自己紹介</h2><ul>
+<li>名前：濃野剛(こいの　たけし)</li>
+<li>職業：フリーランスエンジニア</li>
+<li>開発年数：2014年8月～(現在)  </li>
+<li>主な使用言語<ul>
+<li>サーバー系<ul>
+<li>Java</li>
+<li>C#</li>
+</ul>
+</li>
+<li>フロント系<ul>
+<li>JavaScript</li>
+<li>jsp</li>
+<li>aspx</li>
+</ul>
+</li>
+<li>DB<ul>
+<li>oracleSQL</li>
+<li>SQLServer</li>
+<li>Transact-SQL</li>
+</ul>
+</li>
+<li>その他<ul>
+<li>VBA</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>保有資格<ul>
+<li>基本情報技術者</li>
+<li>応用情報技術者</li>
+<li><span style="font-size:small">英検準2級</span></li>
+<li><span style="font-size:x-small">臨床工学技士</span></li>
+</ul>
+</li>
+</ul>
+<!-- ## リポジトリ
+- [github](https://github.com/KoinoEngineering) -->
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-07-01T00:44:46.000Z"><a href="/articles/20180701CreateHomePageWithGithubPages-Hexo-CircleCi_Ex01_CustomDomain/">2018-07-01</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/articles/20180701CreateHomePageWithGithubPages-Hexo-CircleCi_Ex01_CustomDomain/">Github-Pages-Hexo-CircleCiでホームページを作る-番外編-カスタムドメイン</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>タイトルの通り、ホームページを構築したので、最初の記事の練習と備忘録として記事を作成  </p>
+<p>カスタムドメイン編</p>
+<hr>
+<h2 id="ドメインを用意する"><a href="#ドメインを用意する" class="headerlink" title="ドメインを用意する"></a>ドメインを用意する</h2><p>任意のドメイン取得サイトなどを使用して、ドメインを取得する<br>今回使用したのはこちら<br>→<a href="https://navi.onamae.com/" target="_blank" rel="noopener">https://navi.onamae.com/</a></p>
+<h2 id="DNSの設定"><a href="#DNSの設定" class="headerlink" title="DNSの設定"></a>DNSの設定</h2><p>取得したドメインのDNSの設定を参照したいリポジトリのGithub Pagesのドメインに設定する。</p>
+<p>お名前.comの場合、以下の手順で設定画面を開くことができる  </p>
+<ul>
+<li>[DNS]のタブを開き、設定したいサーバー(今回は共用サーバー)を選択<br>  <img src="/articles/20180701CreateHomePageWithGithubPages-Hexo-CircleCi_Ex01_CustomDomain/SelectServer.png" title="SelectServer"></li>
+<li>今回使用するドメインを選択<br>  <img src="/articles/20180701CreateHomePageWithGithubPages-Hexo-CircleCi_Ex01_CustomDomain/SelectDomain.png" title="SelectDomain"></li>
+<li>サーバーの画面から「独自ドメイン設定」を押下<br>  <img src="/articles/20180701CreateHomePageWithGithubPages-Hexo-CircleCi_Ex01_CustomDomain/OriginalDomain.png" title="OriginalDomain"></li>
+<li>ドメイン設定の画面の、今回使用するドメインの「DNS設定」を押下<br>  <img src="/articles/20180701CreateHomePageWithGithubPages-Hexo-CircleCi_Ex01_CustomDomain/DNSMain.png" title="DNSMain"></li>
+<li>任意のレコードタイプがAのレコードの「変更」を押下<br>※ ftp,pop,smtp,imapはそれぞれ別の用途のものなので、今回はwwwを使用<br>  <img src="/articles/20180701CreateHomePageWithGithubPages-Hexo-CircleCi_Ex01_CustomDomain/SelectHost.png" title="SelectHost"></li>
+<li>TYPEをCNAMEに変更し、ホストを<em>githubuser</em>.github.ioに変更する<br>  <img src="/articles/20180701CreateHomePageWithGithubPages-Hexo-CircleCi_Ex01_CustomDomain/SetCname.png"></li>
+<li>自分のドメイン(今回は<a href="http://www.koino.engineering" target="_blank" rel="noopener">http://www.koino.engineering</a>)にアクセスして確認する<br>この段階ではGithub側の設定ができていないので、Githubの404エラー画面が表示される<br>  <img src="/articles/20180701CreateHomePageWithGithubPages-Hexo-CircleCi_Ex01_CustomDomain/GithubNotFound.png">
+</li>
+</ul>
+<h2 id="Githubの設定"><a href="#Githubの設定" class="headerlink" title="Githubの設定"></a>Githubの設定</h2><ul>
+<li><p><span style="color:red;font-weight: bold;">CircleCiとHexoの挙動の都合上以下の方法ではダメだった方法</span><br>  <del>Githubの設定はSettingsの画面から簡単に行うことができるが、それだと直接リモートのgh-pagesブランチを更新してしまうため、別の方法で実施することにする。</del>  </p>
+<ul>
+<li><p><del>CNAMEというファイルをリポジトリの直下に作成し、中に連携したいドメインをホスト込みで記載する</del>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">www.koino.engineering</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><del>これをpushすれば設定完了</del>  </p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><span style="color:red;font-weight: bold;">正しい方法</span><br><code>circle.yml</code>の<code>hexo generate</code>の後に以下の記載を追加する</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">　- run: echo &quot;(ホスト名込みの自分のドメイン)&quot; &gt; public/CNAME</span><br></pre></td></tr></table></figure>
+<ul>
+<li>サンプル<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">    　- run: echo &quot;www.koino.engineering&quot; &gt; public/CNAME</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="config-ymlの設定"><a href="#config-ymlの設定" class="headerlink" title="_config.ymlの設定"></a><code>_config.yml</code>の設定</h2><ul>
+<li><p>カスタムドメインの設定をするとURLがサブフォルダで無くなるため、<code>_config.yml</code>の以下の設定を戻す  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;</span><br><span class="line">url: http://yoursite.com/</span><br><span class="line">root: /</span><br><span class="line">permalink: :year/:month/:day/:title/</span><br><span class="line">permalink_defaults:</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>変更をpushした後、設定したドメインにアクセスする<br>  </p>
+<img src="/articles/20180701CreateHomePageWithGithubPages-Hexo-CircleCi_Ex01_CustomDomain/SubDomainComplete.png" title="SubDomainComplete">
+<p>画面が正しく表示できればカスタムドメインの設定完了</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-06-30T13:37:19.000Z"><a href="/articles/20180630CreateHomePageWithGithubPages-Hexo-CircleCi_04_Articles/">2018-06-30</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/articles/20180630CreateHomePageWithGithubPages-Hexo-CircleCi_04_Articles/">Github-Pages-Hexo-CircleCiでホームページを作る_04_記事を書く編</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>タイトルの通り、ホームページを構築したので、最初の記事の練習と備忘録として記事を作成  </p>
+<p>記事作成と画像の挿入編</p>
+<hr>
+<h2 id="記事を書く"><a href="#記事を書く" class="headerlink" title="記事を書く"></a>記事を書く</h2><h3 id="各種設定"><a href="#各種設定" class="headerlink" title="各種設定"></a>各種設定</h3><p>各種と言っても入れたいものは今の所は1つだけ<br>記事を作成する際に、付随情報を格納する用フォルダが作成される</p>
+<pre><code>post_asset_folder: true
+</code></pre><p>今後、使って行きたい機能が増えたら追記していくかもしれない</p>
+<h3 id="記事の作成"><a href="#記事の作成" class="headerlink" title="記事の作成"></a>記事の作成</h3><p>記事の作成は以下のコマンドを実行し、作成されるMDファイルにマークダウン形式で記事を書くだけ<br>また、上記の設定をしていると、付随する情報を格納するためのディレクトリが同時に作成される<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &lt;記事のタイトル&gt;</span><br></pre></td></tr></table></figure></p>
+<p>その後<code>hexo generate</code>のコマンドを作成する事でその記事のHTMLが生成される</p>
+<h3 id="画像の挿入"><a href="#画像の挿入" class="headerlink" title="画像の挿入"></a>画像の挿入</h3><p>Hexoを使用して記事に画像を挿入する方法として、一般的なマークダウン形式の記法も使用可能だが、<br>今回は<code>post_asset_folder: true</code>の設定をいれてあるので、Hexoの独自記法を使用することにした。</p>
+<p>前提として、<code>Hexo new</code>した時に精製される、 <strong>記事のタイトルのディレクトリ</strong> に画像を格納する<br>その上で以下のように記載する<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img [class names] slug [width] [height] [title text [alt text]]%&#125;</span><br></pre></td></tr></table></figure></p>
+<p>詳細はこちら→<a href="https://hexo.io/docs/tag-plugins.html#Image" target="_blank" rel="noopener">img</a> / <a href="https://hexo.io/docs/tag-plugins.html#Include-Assets" target="_blank" rel="noopener">asset_img</a></p>
+<p>サンプル</p>
+<ul>
+<li><p>MDサンプル</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img lena.jpg 150 &quot;lena&quot; %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>画像の表示  </p>
+<img src="/articles/20180630CreateHomePageWithGithubPages-Hexo-CircleCi_04_Articles/lena.jpg" width="150" title="lena">
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-06-28T15:59:28.000Z"><a href="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_03_CircleCI/">2018-06-29</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_03_CircleCI/">Github-Pages-Hexo-CircleCiでホームページを作る_03_CircleCI編</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>タイトルの通り、ホームページを構築したので、最初の記事の練習と備忘録として記事を作成  </p>
+<p>CiecleCI編</p>
+<hr>
+<h2 id="CircleCIと連携する"><a href="#CircleCIと連携する" class="headerlink" title="CircleCIと連携する"></a>CircleCIと連携する</h2><p>masterブランチへマークダウンをコミットした際に、<br>今までしてきたHexoのデプロイの設定～デプロイまでを自動でやってもらうように設定する</p>
+<h3 id="CircleCIの設定のデフォルトを取得する"><a href="#CircleCIの設定のデフォルトを取得する" class="headerlink" title="CircleCIの設定のデフォルトを取得する"></a>CircleCIの設定のデフォルトを取得する</h3><ul>
+<li>実際にやっていないので不明だが、こちらを先にやった方がいいかもしれない<br>→ <a href="#SSHの設定">SSHの設定</a></li>
+</ul>
+<p>以下の手順で<code>circle.yml</code>の雛形を取得する  </p>
+<ul>
+<li><p>プロジェクトを追加を選択<br></p>
+<img src="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_03_CircleCI/CircleCISetupProject.PNG" title="CircleCISetupProject">
+</li>
+<li><p>プロジェクトを追加をクリック<br></p>
+<img src="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_03_CircleCI/CircleCIAddProject.PNG" title="CircleCIAddProject">
+</li>
+<li><p>言語の設定はNodeを選択<br></p>
+<img src="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_03_CircleCI/CircleCILanguage.PNG" title="CircleCILanguage">
+</li>
+<li><p><code>circle.yml</code>のデフォルトの設定が表示される<br></p>
+<img src="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_03_CircleCI/CircleCIYmlDefault.PNG" title="CircleCIYmlDefault">
+</li>
+</ul>
+<h3 id="Github側の設定"><a href="#Github側の設定" class="headerlink" title="Github側の設定"></a>Github側の設定</h3><p><code>circle.yml</code>を作成し、masterブランチへpushする<br>上記で取得したデフォルトと、<a href="https://circleci.com/docs/2.0/" target="_blank" rel="noopener">CircleCI 2.0 Docs</a>を参考に、<br><code>circle.yml</code>をこのように編集した</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"># Javascript Node CircleCI 2.0 configuration file</span><br><span class="line">#</span><br><span class="line"># Check https://circleci.com/docs/2.0/language-javascript/ for more details</span><br><span class="line">#</span><br><span class="line">version: 2</span><br><span class="line">jobs:</span><br><span class="line">  build:</span><br><span class="line">    docker:</span><br><span class="line">      # specify the version you desire here</span><br><span class="line">      - image: circleci/node:8.11.3</span><br><span class="line">        environment:</span><br><span class="line">          TZ: /usr/share/zoneinfo/Asia/Tokyo</span><br><span class="line">      # Specify service dependencies here if necessary</span><br><span class="line">      # CircleCI maintains a library of pre-built images</span><br><span class="line">      # documented at https://circleci.com/docs/2.0/circleci-images/</span><br><span class="line">      # - image: circleci/mongo:3.4.4</span><br><span class="line"></span><br><span class="line">    working_directory: ~/HomePage</span><br><span class="line">    branches:</span><br><span class="line">      only:</span><br><span class="line">        - master</span><br><span class="line">    steps:</span><br><span class="line">      - run:</span><br><span class="line">          name: update-npm</span><br><span class="line">          command: &apos;sudo npm install -g npm@6&apos;</span><br><span class="line">      - checkout</span><br><span class="line">      - run:</span><br><span class="line">          name: install-npm</span><br><span class="line">          command: npm install</span><br><span class="line">      - run: git config --global user.name &quot;KoinoEngineering with CircleCI&quot;</span><br><span class="line">      - run: git config --global user.email &quot;email@koino.engineering&quot;</span><br><span class="line">      - run: git submodule init</span><br><span class="line">      - run: git submodule update</span><br><span class="line">      - run: ./node_modules/.bin/hexo clean</span><br><span class="line">      - run: ./node_modules/.bin/hexo generate</span><br><span class="line">      - run: ./node_modules/.bin/hexo deploy</span><br></pre></td></tr></table></figure>
+<p>設定の概要</p>
+<ul>
+<li>nodeのバージョンは8.11.3(準備編でインストールしたバージョン)</li>
+<li>作業ディレクトリはリポジトリ名</li>
+<li>masterブランチへのpushにのみ反応する</li>
+<li>npmをアップデート（デフォルトのnpmが古かったため）</li>
+<li>run:コマンドに実行したい内容を１行づつ記載</li>
+</ul>
+<h2 id="CircleCI側の設定"><a href="#CircleCI側の設定" class="headerlink" title="CircleCI側の設定"></a>CircleCI側の設定</h2><p><a href="#CircleCIの設定のデフォルトを取得する">CircleCIの設定のデフォルトを取得する</a>でやったところの続きから<br>(戻ってしまっていた場合にはもう一度やればOK)  </p>
+<ul>
+<li><p>Start buildingをクリック<br><br>　　　　<img src="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_03_CircleCI/CircleCIStartBuilding.PNG" title="CircleCIStartBuilding"></p>
+</li>
+<li><p>成功時はCircleCIのサイトの方で以下のようにログが出力されていくが、正しく設定できていても<br>初回は<code>hexo deploy</code>コマンドで<strong>失敗する</strong><br>理由は下記</p>
+<pre><code>※deploy以外のコマンドで失敗した場合には設定が誤っているので、ログ等を確認して修正する  
+{% asset_img WorkCricleCI.PNG "WorkCricleCI" %}
+</code></pre></li>
+<li><p><span id="SSHの設定">SSHの設定</span><br>CircleCIが持っているSSHキーは読み取り権限しかもっていないため、pushできない<br>pushできるようにするために以下の設定を行う</p>
+<ol>
+<li>Add User Keyをクリック  </li>
+<li>githubとの連携の認証を聞かれるので承諾する</li>
+<li>SSHキーが追加される<br>　　    <img src="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_03_CircleCI/AddSshKey.PNG" title="AddSshKey"></li>
+</ol>
+</li>
+</ul>
+<h2 id="自動デプロイ"><a href="#自動デプロイ" class="headerlink" title="自動デプロイ"></a>自動デプロイ</h2><p>ここまでの設定が正しくできていれば、masterブランチがpushされると<br>CircleCIが自動でgh-pagesブランチへのデプロイを行うようになる</p>
+<img src="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_03_CircleCI/WorkCircleCI.PNG" title="WorkCircleCI">
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-06-28T15:40:53.000Z"><a href="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_02_Hexo/">2018-06-29</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_02_Hexo/">Github-Pages-Hexo-CircleCiでホームページを作る_02_Hexo編</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>タイトルの通り、ホームページを構築したので、最初の記事の練習と備忘録として記事を作成  </p>
+<p>ここはHexoの設定からGithub Pagesの設定までを行う</p>
+<hr>
+<h2 id="Hexoの設定"><a href="#Hexoの設定" class="headerlink" title="Hexoの設定"></a>Hexoの設定</h2><h3 id="初期化"><a href="#初期化" class="headerlink" title="初期化"></a>初期化</h3><p>ここで使用するフォルダをそのままGitHubにpushする予定なので、<br><strong>gitのホームディレクトリ</strong> で <strong>GitHubに作成したリポジトリと同じ名前</strong> で初期化<br>そのままホームページのディレクトリに移動して画面を起動する</p>
+<pre><code>$ Hexo init HomePage
+$ cd HomePage
+$ Hexo server
+</code></pre><ul>
+<li>ホームページのディレクトリでコマンド実行<br>  <img src="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_02_Hexo/hexoStart.PNG" title="hexoStart"></li>
+<li>URLにアクセス<br>  <img src="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_02_Hexo/HexoDefaultPage.PNG" title="HexoDefaultPage">
+</li>
+</ul>
+<h3 id="テーマの設定"><a href="#テーマの設定" class="headerlink" title="テーマの設定"></a>テーマの設定</h3><p>テーマの変更をしたい場合はこちらを実施する。余談なので短く<br><a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexoのthemes</a>からテーマを選んで、そのテーマのリポジトリを見る<br>手順に従ってthemesのディレクトリにCloneして<code>_config.yml</code>を修正するだけ。<br>使ってないlandscapeは消しちゃってもいいかもしれないけど、<br>デフォルトはなんかどこかから参照していることがあるので放置。<em>未調査</em>。</p>
+<ul>
+<li>themesのディレクトリにClone<br>  <pre><code>git clone &lt;https://github.com/hexojs/hexo-theme-light.git&gt; themes/light
+</code></pre></li>
+<li><code>_config.yml</code>を修正  <pre><code># Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: light
+</code></pre></li>
+<li>適用されていることを確認<br><img src="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_02_Hexo/ThemeChanged.PNG" title="ThemeChanged">
+</li>
+</ul>
+<h2 id="masterブランチへコミット"><a href="#masterブランチへコミット" class="headerlink" title="masterブランチへコミット"></a>masterブランチへコミット</h2><p>ここまでで作成したものをオリジナルのHexoの設定やマークダウンを管理するためにmasterブランチへ追加する</p>
+<pre><code>$ git init
+$ git add .
+$ git commit -m &quot;first commit&quot;
+$ git remote add origin git@github.com:KoinoEngineering/HomePage.git
+$ git push -u origin master
+</code></pre><img src="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_02_Hexo/makeMaster.PNG" title="makeMaster">
+<h2 id="Github-Pagesの設定-デプロイの準備"><a href="#Github-Pagesの設定-デプロイの準備" class="headerlink" title="Github Pagesの設定(デプロイの準備)"></a>Github Pagesの設定(デプロイの準備)</h2><h3 id="gh-pagesブランチの作成"><a href="#gh-pagesブランチの作成" class="headerlink" title="gh-pagesブランチの作成"></a>gh-pagesブランチの作成</h3><p>Hexoのデプロイ先で、Github Pagesの本体となるgh-pagesブランチを作成する。<br>中身は何でもいいので今回は<code>HelloWorld</code>だけの<code>index.html</code>を作成した  </p>
+<pre><code>$ git checkout -b gh-pages  
+$ echo HelloWorld&gt;index.html  
+$ git add index.html  
+$ git commit -m &quot;make gh-pages branch&quot;  
+$ git push origin gh-pages  
+$ git checkout master  
+</code></pre><img src="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_02_Hexo/makeGhPages.PNG" title="makeGhPages">
+<h3 id="リポジトリの設定を変更する"><a href="#リポジトリの設定を変更する" class="headerlink" title="リポジトリの設定を変更する"></a>リポジトリの設定を変更する</h3><ul>
+<li>リポジトリのSettingsタブ＞GitHub Pagesにある、<code>Source</code>を<code>gh-pages</code>に変更して<code>save</code>を押す</li>
+<li><p><code>Enforce HTTPS</code>にチェックを入れる  </p>
+<img src="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_02_Hexo/GhPagesSettings.PNG" title="GhPagesSettings">
+</li>
+</ul>
+<p>この段階で表示されているURLに接続して、以下のようなっていれば設定はOK<br><img src="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_02_Hexo/HelloWorld.PNG" title="HelloWorld"></p>
+<h2 id="デプロイ"><a href="#デプロイ" class="headerlink" title="デプロイ"></a>デプロイ</h2><h3 id="config-ymlの設定"><a href="#config-ymlの設定" class="headerlink" title="_config.ymlの設定"></a>_config.ymlの設定</h3><p><code>_config.yml</code>に以下の設定をする  </p>
+<pre><code># Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: git@github.com:KoinoEngineering/HomePage.git
+  branch: gh-pages
+</code></pre><p>また、今回はリポジトリ名が<em>username.github.io</em>ではないため、Github Pagesを設定した場合の  URLが<br><a href="https://KoinoEngineering.github.io/HomePage" target="_blank" rel="noopener">https://KoinoEngineering.github.io/HomePage</a><br>のようにサブディレクトリとなる。<br>その設定がこちら</p>
+<pre><code># URL
+url: http://yoursite.com/HomePage
+root: /HomePage/
+</code></pre><p>ついでに<a href="https://hexo.io/docs/configuration.html" target="_blank" rel="noopener">ここ</a>を見ながらサイトの設定もした</p>
+<pre><code># Site
+title: &quot;こいのエンジニアリング&quot;
+subtitle:
+description: &quot;こいのエンジニアリングのホームページ&quot;
+keywords:
+author: &quot;濃野 剛&quot;
+language: ja
+timezone: Asia/Tokyo
+</code></pre><p><span style="color:red">注意点</span></p>
+<ul>
+<li><code>_config.yml</code>に日本語を入力した個所は<code>&quot;</code>で囲わないとHTML生成時にエラーになった。2バイト文字だから？</li>
+<li>ファイルがSJISだったためか文字化けした。UTF-8に変換して解消</li>
+</ul>
+<h3 id="設定内容の確認"><a href="#設定内容の確認" class="headerlink" title="設定内容の確認"></a>設定内容の確認</h3><p>設定が正しく反映されているかを、もう一度画面を起動しなおして確認  </p>
+<img src="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_02_Hexo/AfterConfigEditPage.PNG" title="AfterConfigEditPage">
+<h3 id="デプロイの実施"><a href="#デプロイの実施" class="headerlink" title="デプロイの実施"></a>デプロイの実施</h3><p>→ <a href="#デプロイが失敗する場合">デプロイが失敗する場合</a> はこちら</p>
+<p>以下のコマンドをホームページのディレクトリで実行する</p>
+<pre><code>$ hexo clean
+$ hexo generate
+$ hexo deploy
+
+または
+
+$ hexo deploy -g
+</code></pre><h4 id="デプロイが失敗する場合"><a href="#デプロイが失敗する場合" class="headerlink" title="デプロイが失敗する場合"></a><span style="color:red;">デプロイが失敗する場合</span></h4><p><code>type:git</code>で<code>delpyer not found</code>のエラーが発生する場合<br>プラグイン<code>hexo-deployer-git</code>が必要な模様</p>
+<pre><code>$ npm install hexo-deployer-git --save
+</code></pre><h4 id="デプロイの確認"><a href="#デプロイの確認" class="headerlink" title="デプロイの確認"></a>デプロイの確認</h4><p>デプロイに成功したらGithub Pagesの設定に表示されているURLにアクセスして確認する<br>作成したホームページがきれいに表示できていれば成功<br><img src="/articles/20180629CreateHomePageWithGithubPages-Hexo-CircleCi_02_Hexo/DisplayOnWeb.PNG" title="DisplayOnWeb"></p>
+<p>これで、Hexoを用いてホームページを作成するところまでが完了した</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-06-28T14:50:47.000Z"><a href="/articles/20180628CreateHomePageWithGithubPages-Hexo-CircleCi_01_Preparation/">2018-06-28</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/articles/20180628CreateHomePageWithGithubPages-Hexo-CircleCi_01_Preparation/">Github-Pages-Hexo-CircleCiでホームページを作る_01_準備編</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>タイトルの通り、ホームページを構築したので、最初の記事の練習と備忘録として記事を作成  </p>
+<p>ここは準備編</p>
+<hr>
+<h2 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h2><ul>
+<li>OS：Windows10 Home</li>
+<li>Githubアカウントあり</li>
+<li>ssh設定済み</li>
+</ul>
+<p>その他の環境など</p>
+<ul>
+<li>エディタ：Atom</li>
+<li>Gitのホームディレクトリを変更している</li>
+<li>GitHubはssh設定済み</li>
+</ul>
+<hr>
+<h2 id="下準備１-node-js"><a href="#下準備１-node-js" class="headerlink" title="下準備１ node.js"></a>下準備１ node.js</h2><p>Hexoを動作させるのにnode.jsが必要なためインストール<br>今回はバージョン管理も必要かと思ったため<a href="https://github.com/marcelklehr/nodist/releases" target="_blank" rel="noopener">nodist</a>を使用することにした<br>ちなみにMacの場合には<a href="https://github.com/hokaccha/nodebrew" target="_blank" rel="noopener">nodebrew</a>というものがあるらしい  </p>
+<h3 id="Nodistのインストール"><a href="#Nodistのインストール" class="headerlink" title="Nodistのインストール"></a>Nodistのインストール</h3><p>AssetsのSetup-v0.8.8.exeをダウンロードして手順に従ってインストールする  </p>
+<img src="/articles/20180628CreateHomePageWithGithubPages-Hexo-CircleCi_01_Preparation/nodist.PNG" title="nodistダウンロード">
+<h3 id="インストールの確認"><a href="#インストールの確認" class="headerlink" title="インストールの確認"></a>インストールの確認</h3><img src="/articles/20180628CreateHomePageWithGithubPages-Hexo-CircleCi_01_Preparation/nodist-v.PNG" title="インストールの確認">
+<h3 id="nodeの安定板をインストール"><a href="#nodeの安定板をインストール" class="headerlink" title="nodeの安定板をインストール"></a>nodeの安定板をインストール</h3><p>Hexoのインストール手順を見たら<code>$ nvm install stable</code>となっていたため最新の安定板をインストールしようとしたが、<br>nodistで</p>
+<pre><code>nodist stable
+</code></pre><p>とやってみたら<span style="color:red;"><strong>エラーになった</strong></span><br>Helpコマンド叩いてみてもlastestはいたが、stableキーワードはいなかった。<br><br>よくよく調べてみると、<br><img src="/articles/20180628CreateHomePageWithGithubPages-Hexo-CircleCi_01_Preparation/stableHasBeenRemoved.PNG" title="stableHasBeenRemoved"><br>nodistでは0.8.1でstableキーワードが<strong>削除されていたようだ</strong>。<br>node.jsのサイトを見ると<strong>8.11.3</strong>が<strong>Recommended For Most Usersとなっていた</strong>ため、これをインストールすることにした<br><img src="/articles/20180628CreateHomePageWithGithubPages-Hexo-CircleCi_01_Preparation/install8_11_3.PNG" title="install8_11_3"></p>
+<h2 id="下準備２-Github"><a href="#下準備２-Github" class="headerlink" title="下準備２ Github"></a>下準備２ Github</h2><p>今回はGithubのGithub Pagesを使用してホームページを作成するため、Github Pages用の設定を行う。</p>
+<h3 id="任意のリポジトリを作成する"><a href="#任意のリポジトリを作成する" class="headerlink" title="任意のリポジトリを作成する"></a>任意のリポジトリを作成する</h3><p>このホームページに使用する用のリポジトリを作成する。<br><br>今回はHomePageというリポジトリを作成した<br><img src="/articles/20180628CreateHomePageWithGithubPages-Hexo-CircleCi_01_Preparation/HomePageRepository.PNG" title="HomePageRepository"><br>※<em>username.github.io</em> というリポジトリを作れば細かい設定をしなくてもGithub Pagesが使用できるが、<br><strong>自動的にmasterブランチを使用する設定になってしまう</strong> 。今回は、gh-pagesブランチを使用した設定をしたかったため、今回は逆にやりづらいかもしれないと思いやめた<br>(設定の変更は可能なので、できないことはない)  </p>
+<h2 id="下準備３-Hexoのインストール"><a href="#下準備３-Hexoのインストール" class="headerlink" title="下準備３　Hexoのインストール"></a>下準備３　Hexoのインストール</h2><p><a href="https://hexo.io/docs/" target="_blank" rel="noopener">Hexo</a>のインストール手順に従って、以下のコマンドを実行し、インストールする</p>
+<pre><code>$ npm install -g hexo-cli
+</code></pre><ul>
+<li>インストールの確認  </li>
+</ul>
+<img src="/articles/20180628CreateHomePageWithGithubPages-Hexo-CircleCi_01_Preparation/HexoVersionCheck.PNG" title="HexoVersionCheck">
+<h2 id="下準備３-CircleCi"><a href="#下準備３-CircleCi" class="headerlink" title="下準備３ CircleCi"></a>下準備３ CircleCi</h2><p><a href="https://circleci.com/signup/" target="_blank" rel="noopener">circleci</a>に接続して<strong>Sign Up with GitHub</strong>からCircleCiを連携する</p>
+<p>これで必要なものが全てそろった状態になった</p>
+<p>準備編はここまで</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+<nav id="pagination">
+  
+  
+  <div class="clearfix"></div>
+</nav></div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">Tags</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/CircleCI/">CircleCI</a><small>5</small></li>
+  
+    <li><a href="/tags/blog/">blog</a><small>5</small></li>
+  
+    <li><a href="/tags/hexo/">hexo</a><small>5</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2018 濃野 剛
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
