@@ -1,7 +1,10 @@
 ---
 title: Github-Pages-Hexo-CircleCiでホームページを作る-番外編-カスタムドメイン
 date: 2018-07-01 09:44:46
-tags: blog
+tags:
+- blog
+- hexo
+- CircleCI
 ---
 
 タイトルの通り、ホームページを構築したので、最初の記事の練習と備忘録として記事を作成  
